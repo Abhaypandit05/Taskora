@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    --bg-deep: #03090d;
+    --teal-accent: #00e6b8;
+    --teal-secondary: #00cfa6;
+    --mint-light: #42ffd4;
+
+    --surface-dark: #07141a;
+    --surface-card: #0a1b21;
+    --border-dark: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-deep);
+    color: #f8fafc;
+    font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+    overflow-x: hidden;
+
+    background-image:
+      radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(0, 230, 184, 0.16),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 80% 60%,
+        rgba(0, 207, 166, 0.07),
+        transparent 60%
+      );
+
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(0, 230, 184, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* Form controls */
+
+input,
+select,
+textarea {
+  color-scheme: dark;
+  color: #ffffff !important;
+  background-color: #07141a !important;
+  border-color: rgba(0, 230, 184, 0.2);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #00e6b8 !important;
+  box-shadow: 0 0 0 3px rgba(0, 230, 184, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #819096 !important;
+}
+
+/* Browser autofill */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #07141a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03090d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 230, 184, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 230, 184, 0.8);
+}
+
+/* Glass panels */
+
+.futuristic-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(7, 20, 26, 0.88),
+    rgba(3, 9, 13, 0.96)
+  );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(0, 230, 184, 0.14);
+
+  box-shadow:
+    0 10px 30px -10px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(0, 230, 184, 0.03);
+}
+
+/* Task cards */
+
+.futuristic-card {
+  background: linear-gradient(
+    145deg,
+    rgba(10, 27, 33, 0.9),
+    rgba(5, 13, 18, 0.96)
+  );
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.65);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 230, 184, 0.45);
+
+  box-shadow:
+    0 16px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 25px -5px rgba(0, 230, 184, 0.14);
+}
+
+/* Neon mint hover effect */
+
+.glow-teal-hover:hover {
+  border-color: rgba(0, 230, 184, 0.45) !important;
+
+  box-shadow:
+    0 16px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 25px -5px rgba(0, 230, 184, 0.18) !important;
+}
+
+/* Gradient buttons */
+
+.neon-button-cyan {
+  background: linear-gradient(
+    135deg,
+    #42ffd4 0%,
+    #00e6b8 55%,
+    #008f78 100%
+  );
+
+  color: #03110f;
+
+  font-weight: 700;
+  border: 1px solid rgba(66, 255, 212, 0.45);
+  border-radius: 10px;
+
+  box-shadow: 0 0 20px -3px rgba(0, 230, 184, 0.35);
+
+  transition: all 0.25s ease;
+}
+
+.neon-button-cyan:hover {
+  box-shadow:
+    0 0 30px rgba(0, 230, 184, 0.45),
+    0 0 15px rgba(0, 207, 166, 0.2);
+
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* Secondary gradient button */
+
+.neon-button-purple {
+  background: linear-gradient(
+    135deg,
+    #42ffd4,
+    #00cfa6,
+    #008f78
+  );
+
+  color: #03110f;
+  font-weight: 700;
+  border-radius: 10px;
+
+  box-shadow: 0 0 22px -3px rgba(0, 230, 184, 0.3);
+
+  transition: all 0.25s ease;
+}
+
+.neon-button-purple:hover {
+  box-shadow: 0 0 30px rgba(0, 230, 184, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Accent utilities */
+
+.text-teal-accent {
+  color: #42ffd4;
+}
+
+.bg-teal-accent {
+  background-color: #00e6b8;
+}
+
+.border-teal-accent {
+  border-color: rgba(0, 230, 184, 0.4);
+}
+
+/* Gradient heading text */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #42ffd4,
+    #00e6b8,
+    #a0ffea
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Keyboard focus */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #42ffd4;
+  outline-offset: 4px;
+}
+
+/* Background grid */
+
+.cyber-grid {
+  background-size: 40px 40px;
+
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 230, 184, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 230, 184, 0.035) 1px,
+      transparent 1px
+    );
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
